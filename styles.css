@@ -1,0 +1,121 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('snowy-background.png'); /* Fond d'écran neigeux */
+    background-size: cover;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.8); /* Arrière-plan opaque pour la lisibilité */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #008000; /* Vert */
+    font-size: 36px;
+}
+
+.message {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.christmas-decorations {
+    position: relative;
+    margin-top: 20px;
+}
+
+.christmas-tree {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: tree-sway 5s ease-in-out infinite;
+}
+
+@keyframes tree-sway {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(5deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+}
+
+.snowman {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 150px;
+    left: 30%;
+    animation: snowman-move 10s linear infinite;
+}
+
+@keyframes snowman-move {
+    0% {
+        left: 30%;
+    }
+    100% {
+        left: 70%;
+    }
+}
+
+.gifts {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 200px;
+    right: 30%;
+    animation: gifts-move 10s linear infinite;
+}
+
+@keyframes gifts-move {
+    0% {
+        right: 30%;
+    }
+    100% {
+        right: 10%;
+    }
+}
+
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.snowflakes::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('snowflakes.png');
+    background-size: cover;
+    animation: snowfall 10s linear infinite;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
